@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useToast } from "@/context/ToastContext";
 
 interface OrderItem {
   name: string;
@@ -40,6 +41,7 @@ export default function AdminOrdersPage() {
   const [orders, setOrders] = useState<Order[]>([]);
   const [statusFilter, setStatusFilter] = useState<string>("");
   const [loading, setLoading] = useState(true);
+  const { showToast } = useToast();
 
   async function loadOrders() {
     setLoading(true);
@@ -70,6 +72,9 @@ export default function AdminOrdersPage() {
     if (!res.ok) {
       // Si falla, recargamos para revertir al estado real
       loadOrders();
+      showToast("No se pudo actualizar el estado", "error");
+    } else {
+      showToast(`Estado actualizado a "${STATUS_LABELS[newStatus]}"`, "success");
     }
   }
 
@@ -154,7 +159,7 @@ export default function AdminOrdersPage() {
                     {order.paymentReference ? ` (ref: ${order.paymentReference})` : ""}
                   </p>
                   <p className="font-[family-name:var(--font-mono)] font-semibold mt-1">
-                    Bs {new Intl.NumberFormat("es-VE", { maximumFractionDigits: 0 }).format(order.totalBs)}
+                    Bs {new Intl.NumberFormat("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(order.totalBs)}
                     {" · "}${order.totalUSD.toFixed(2)}
                   </p>
                 </div>

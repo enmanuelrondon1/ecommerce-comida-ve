@@ -98,7 +98,7 @@ export default function CartPage() {
       <div className="border-t-2 border-[var(--color-line)] pt-6 flex flex-col items-end gap-1">
         <p className="text-sm text-[var(--color-ink-soft)]">{totalItems} producto(s)</p>
         <p className="font-[family-name:var(--font-mono)] text-2xl font-semibold">
-          Bs {new Intl.NumberFormat("es-VE", { maximumFractionDigits: 0 }).format(totalBs)}
+          Bs {new Intl.NumberFormat("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(totalBs)}
         </p>
         <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-ink-soft)]">
           ${totalUSD.toFixed(2)}

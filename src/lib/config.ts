@@ -6,7 +6,11 @@ export const WHATSAPP_NUMBER = "584141234567"; // formato internacional, sin '+'
 export const PAYMENT_INFO = {
   pago_movil: {
     label: "Pago Móvil",
-    details: ["Banco: Banesco", "Teléfono: 0414-1234567", "Cédula: V-12345678"],
+    details: [
+      "Banesco (0134) o Mercantil (0105)",
+      "Teléfono: 0412-9417603",
+      "Cédula: V-20448829",
+    ],
   },
   zelle: {
     label: "Zelle",

@@ -189,7 +189,7 @@ export default function CheckoutPage() {
         {/* Resumen de totales */}
         <div className="border-t-2 border-[var(--color-line)] pt-4 flex flex-col items-end gap-1">
           <p className="font-[family-name:var(--font-mono)] text-2xl font-semibold">
-            Bs {new Intl.NumberFormat("es-VE", { maximumFractionDigits: 0 }).format(totalBs)}
+            Bs {new Intl.NumberFormat("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(totalBs)}
           </p>
           <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-ink-soft)]">
             ${totalUSD.toFixed(2)}

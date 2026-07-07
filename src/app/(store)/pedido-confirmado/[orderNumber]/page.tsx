@@ -73,7 +73,7 @@ export default async function OrderConfirmedPage({
           <span className="text-sm text-[var(--color-ink-soft)]">Total</span>
           <div className="text-right">
             <p className="font-[family-name:var(--font-mono)] text-xl font-semibold">
-              Bs {new Intl.NumberFormat("es-VE", { maximumFractionDigits: 0 }).format(order.totalBs)}
+              Bs {new Intl.NumberFormat("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(order.totalBs)}
             </p>
             <p className="font-[family-name:var(--font-mono)] text-sm text-[var(--color-ink-soft)]">
               ${order.totalUSD.toFixed(2)}

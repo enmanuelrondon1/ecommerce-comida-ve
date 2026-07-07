@@ -16,8 +16,13 @@ export default function PriceTag({
   fromVariants = false,
 }: PriceTagProps) {
   const formattedBs = new Intl.NumberFormat("es-VE", {
-    maximumFractionDigits: 0,
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   }).format(bs);
+
+  // Separamos en parte entera y decimales para darle más peso visual al número
+  // principal — patrón típico de etiquetas de precio reales.
+  const [bsWhole, bsDecimals] = formattedBs.split(",");
 
   const formattedUsd = usd.toFixed(2);
 
@@ -35,7 +40,10 @@ export default function PriceTag({
             Desde
           </span>
         )}
-        <span className="text-lg font-semibold">Bs {formattedBs}</span>
+        <span className="text-lg font-semibold">
+          Bs {bsWhole}
+          <span className="text-[13px] font-normal opacity-70">,{bsDecimals}</span>
+        </span>
         <span className="block text-[11px] opacity-80 mt-0.5">
           ${formattedUsd}
           {unit ? ` / ${unit}` : ""}
