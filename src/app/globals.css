@@ -1,26 +1,31 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-bg: #EDE6D3;       /* kraft de caja de cartón */
+  --color-card: #F7F4EA;     /* kraft claro, para tarjetas sobre el fondo */
+  --color-ink: #201C13;      /* casi negro, con tinte cálido */
+  --color-ink-soft: #5B5545; /* texto secundario */
+  --color-green: #1F4D2C;    /* verde hoja de plátano */
+  --color-green-dark: #14351E;
+  --color-red: #B7410E;      /* achiote */
+  --color-yellow: #F5B942;   /* maíz */
+  --color-line: #D8CFB4;     /* líneas y bordes tipo cordel */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+}
+
+/* Textura sutil de papel kraft, muy discreta, no decorativa de más */
+.paper-texture {
+  background-image: radial-gradient(var(--color-line) 0.5px, transparent 0.5px);
+  background-size: 12px 12px;
+  opacity: 0.35;
+}
+
+/* Borde tipo "cordel de amarre" para separadores */
+.twine-divider {
+  border-top: 2px dashed var(--color-line);
 }
