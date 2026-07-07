@@ -1,7 +1,7 @@
 // src/lib/config.ts
 // Datos del negocio — reemplaza estos placeholders por los datos reales antes de publicar
 
-export const WHATSAPP_NUMBER = "5844248125457"; // formato internacional, sin '+' ni espacios
+export const WHATSAPP_NUMBER = "584248125457"; // formato internacional, sin '+' ni espacios
 
 export const PAYMENT_INFO = {
   pago_movil: {
